@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/tmdb-searchmovie-react-app/static/css/main.43257002.css",
-    "main.js": "/tmdb-searchmovie-react-app/static/js/main.9d87354d.js",
+    "main.js": "/tmdb-searchmovie-react-app/static/js/main.178cec9f.js",
     "static/media/slick.svg": "/tmdb-searchmovie-react-app/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/tmdb-searchmovie-react-app/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/tmdb-searchmovie-react-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/tmdb-searchmovie-react-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/tmdb-searchmovie-react-app/index.html",
     "main.43257002.css.map": "/tmdb-searchmovie-react-app/static/css/main.43257002.css.map",
-    "main.9d87354d.js.map": "/tmdb-searchmovie-react-app/static/js/main.9d87354d.js.map"
+    "main.178cec9f.js.map": "/tmdb-searchmovie-react-app/static/js/main.178cec9f.js.map"
   },
   "entrypoints": [
     "static/css/main.43257002.css",
-    "static/js/main.9d87354d.js"
+    "static/js/main.178cec9f.js"
   ]
 }
