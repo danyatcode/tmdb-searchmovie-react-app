@@ -1,0 +1,402 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.App{
+  position: relative;
+  width: 100wh;
+  height: 100vh;
+}
+/* Slider */
+
+.slider{
+  position: absolute;
+  inset: 0;
+}
+
+.slick-slider{
+  height: 100vh !important;
+}
+.slick-list, .slick-track,.slider-component, .slick-slide > div, .slide{
+  width: 100%;
+  height: 100%; 
+}
+.slide{
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  cursor: grab;
+
+  position: relative;
+}
+
+.slide-content-div{
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-image{
+  object-fit: cover;
+
+  transition: 500ms;
+  filter: contrast(110%);
+  cursor: pointer;
+}
+
+.slide-image-bg{
+  position: absolute;
+
+  inset: 0;
+  z-index: 1;
+  object-fit: cover;
+  filter: blur(15px) sepia(50%);
+
+  width: 100%;
+  height: 100%;
+}
+
+.slick-active .slide-image-bg{
+  transform: scale(1.05);
+}
+
+.slide-image:hover{
+  transform: scale(1.05);
+}
+
+.prev-arrow, .next-arrow{
+  width: 50px;
+  height: 50px;
+
+  position: absolute;
+  z-index: 5;
+
+  bottom: 50px;
+  right: 100px;
+  cursor: pointer;
+
+  transition: 300ms;
+}
+.prev-arrow{
+  right: 130px;
+}
+.prev-arrow:hover, .next-arrow:hover{
+  transform: scale(1.1) translateY(-1px);
+}
+.slick-list{
+  min-height: 800px;
+}
+.slide-content-inner{
+  position: relative;
+  max-width: 95%;
+}
+
+.slide-overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+
+  background-color: #000000;
+  opacity: 0.6;
+}
+
+/* movie-info */
+
+.movie-info{
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px;
+  color: #fff;
+}
+
+.movie-info-title{
+  text-align: center;
+
+  padding: 10px 0px;
+  padding-top: 35px;
+}
+
+.movie-info p{
+  background-color: #fcead6ec;
+  color: #000000;
+  padding: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.movie-info-release{
+  display: flex;
+  text-align: right;
+  background-color: #fcead6ec;
+  color: #000000;
+  padding: 10px;
+  justify-content: flex-end;
+  gap: 0 30px;
+}
+
+.release-date{
+  font-weight: 600;
+}
+
+.movie-info-ratings{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.movie-info-stats{
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-rating-div{
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.vote-average{
+  font-weight: 700;
+}
+
+.movie-info-genres{
+  font-size: 22px;
+}
+
+
+/* Header */
+.header{
+  position: fixed;
+  z-index: 6;
+  
+  width: 1280px;
+  max-width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: rgba(15, 15, 15, 0.486);
+}
+
+.header-ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-ul li{
+  list-style: none;
+  transition:  350ms;
+}
+.header-ul li a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 30px;
+}
+.header-ul li:hover{
+  transform: translateY(-1px);
+  opacity: 0.8;
+}
+.header-lefts{
+  display: flex;
+  align-items: center;
+  gap: 0px 15px;
+}
+.query-input{
+  margin-right: 100px;
+  height: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+  font-size: 20px;
+
+  width: 350px;
+}
+.query-input:focus{
+  outline: none;
+}
+/* Movies Page */
+.movie-page{
+  background-color: #060f13;
+
+  min-height: 100vh;
+}
+.movies-container{
+  max-width: 95%;
+  width: 1280px;
+  margin: auto;
+  padding-top: 80px;
+  min-height: 100vh;
+
+  background-color: #fff3f3;
+  /* box-shadow: 0px 0px 25px 5px #1b1b1b; */
+  background: linear-gradient(to right, #002a42, #000000)
+}
+
+.movie-grid{
+  padding: 50px 15px 150px 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: auto;
+
+  gap: 30px 25px;
+}
+
+.movie-section-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 8px 20px 8px;
+  border-radius: 5px;
+  
+  cursor: pointer;
+  transition: 300ms;
+}
+.movie-section-item:hover{
+  box-shadow: 0px 0px 10px 5px #000;
+  transform: translateY(-5px);
+}
+
+.movie-item-image{
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 4;
+
+  color: #fff;
+}
+
+.movie-item-image-div{
+  width: 100%;
+  height: 50%;
+
+  min-height: 200px;
+  position: relative;
+}
+.movie-media-type{
+  position: absolute;
+  padding: 5px 20px;
+  right: 0;
+  top: 20px;
+  z-index: 5;
+
+  background-color: #e99905;
+  text-transform: uppercase;
+}
+.movie-item-description{
+  width: 100%;
+  height: 50%;
+  margin-top: 10px;
+}
+
+.movie-item-title{
+  font-weight: 600;
+  color: #fff;
+  font-size: 17px;
+}
+
+.movie-item-year, .movie-item-genre{
+  color: antiquewhite;
+}
+.movie-item-info{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.movie-item-genre{
+  color: rgb(255, 153, 0);
+  font-weight: 600;
+}
+
+.nothing-found{
+  width: 100%;
+  color: #fff;
+  text-align: center;
+
+
+  font-size: 22px;
+  padding-top: 150px;
+}
+
+.grid-no-needed{
+  width: 100%;
+}
+
+.prev-arrow, .next-arrow {
+  z-index: 5;
+  bottom: 20px;
+  right: 0px;
+}
+.prev-arrow{
+  right: auto;
+  left: 25px;
+}
+.next-arrow{
+  right: 25px;
+}
+@media (max-width: 863px) {
+  .movie-info-stats{
+    padding: 0;
+  }
+}
+@media (max-width: 635px) {
+  .query-input{
+    width: 200px;
+    margin-left: 10px;
+  }
+  .header-ul li a{
+    font-size: 20px;
+  }
+  .movie-info{
+    padding: 100px 30px;
+  }
+  .prev-arrow, .next-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 475px) {
+  .query-input{
+    width: 100px;
+    margin-left: 10px;
+  }
+  .header-ul li a{
+    font-size: 20px;
+  }
+  .movie-info-stats{
+    margin-bottom: 40px;
+  }
+}
