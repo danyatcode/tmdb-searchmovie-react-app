@@ -5,7 +5,7 @@ import Query from './Query'
 const Header = () => {
 
   const location = useLocation();
-  console.log(location)
+  
   return (
     <header className='header'>
       <nav className='header-nav'>
